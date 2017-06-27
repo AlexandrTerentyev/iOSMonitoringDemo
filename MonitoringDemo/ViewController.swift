@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        monitoringManager.sharingCode = sharingCodeField.text
         // Do any additional setup after loading the view, typically from a nib.
     }
 

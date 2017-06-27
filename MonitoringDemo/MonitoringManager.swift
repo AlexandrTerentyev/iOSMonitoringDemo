@@ -30,6 +30,7 @@ class MonitoringManager: NSObject{
     
     private func setUpLocationManager(){
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
     }
 }
 
@@ -44,11 +45,13 @@ extension MonitoringManager{
 // MARK: Location manager
 extension MonitoringManager: CLLocationManagerDelegate{
     func startUpdatingLocation() {
+        
+        locationManager.requestWhenInUseAuthorization()
         // GPS
-//        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
         
         //Low-energy
-        locationManager.startMonitoringSignificantLocationChanges()
+//        locationManager.startMonitoringSignificantLocationChanges()
     }
     
     func stopUpdatingLocations(){
