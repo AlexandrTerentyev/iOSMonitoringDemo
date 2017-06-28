@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="GPSies http://www.gpsies.com - GPSies Track" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>GPSies Track</name>
+    <link href="http://www.gpsies.com/">
+      <text>GPSies Track on GPSies.com</text>
+    </link>
+    <time>2017-06-28T20:47:02Z</time>
+  </metadata>
+  <wpt lat="55.78072427" lon="49.11279201">
+    <ele>10.000000</ele>
+    <name>Start</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78098975" lon="49.11249160">
+    <ele>10.000000</ele>
+    <name>WP 3</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78129745" lon="49.11214828">
+    <ele>10.000000</ele>
+    <name>WP 4</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78163500" lon="49.11234100">
+    <ele>10.000000</ele>
+    <name>WP 5</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78208782" lon="49.11295294">
+    <ele>10.000000</ele>
+    <name>WP 6</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78258254" lon="49.11358594">
+    <ele>10.000000</ele>
+    <name>WP 7</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78307726" lon="49.11414384">
+    <ele>10.000000</ele>
+    <name>WP 8</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78340300" lon="49.11464800">
+    <ele>10.000000</ele>
+    <name>WP 9</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78303503" lon="49.11501288">
+    <ele>10.000000</ele>
+    <name>WP 10</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78272734" lon="49.11538839">
+    <ele>10.000000</ele>
+    <name>WP 11</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78256444" lon="49.11548495">
+    <ele>10.000000</ele>
+    <name>WP 12</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78239551" lon="49.11530256">
+    <ele>10.000000</ele>
+    <name>WP 13</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78232915" lon="49.11520600">
+    <ele>10.000000</ele>
+    <name>WP 14</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78217832" lon="49.11502361">
+    <ele>10.000000</ele>
+    <name>WP 15</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78206972" lon="49.11475539">
+    <ele>10.000000</ele>
+    <name>WP 16</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78183442" lon="49.11449790">
+    <ele>10.000000</ele>
+    <name>WP 17</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78164739" lon="49.11419749">
+    <ele>10.000000</ele>
+    <name>WP 18</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78149655" lon="49.11396145">
+    <ele>10.000000</ele>
+    <name>WP 19</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78132762" lon="49.11368250">
+    <ele>10.000000</ele>
+    <name>WP 20</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+  <wpt lat="55.78108000" lon="49.11337100">
+    <ele>10.000000</ele>
+    <name>Finish</name>
+    <sym>generic</sym>
+    <type>Generic</type>
+  </wpt>
+</gpx>
+

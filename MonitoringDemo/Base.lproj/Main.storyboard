@@ -22,21 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTn-tc-VpU">
-                                <rect key="frame" x="131" y="238" width="125" height="30"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="mKr-Ib-Chu"/>
-                                </constraints>
-                                <state key="normal" title=" Start monitoring ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onStartMonitoringTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WQJ-MI-LcF"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRp-XN-hr1">
-                                <rect key="frame" x="134" y="276" width="118" height="30"/>
+                                <rect key="frame" x="128.5" y="420" width="118" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title=" Stop monitoring ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -46,46 +33,69 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="amazingcode" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHn-Fm-vni">
-                                <rect key="frame" x="65" y="138" width="255" height="30"/>
+                                <rect key="frame" x="60" y="550" width="256" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sharing code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd6-VT-Z4p">
-                                <rect key="frame" x="136" y="109" width="106" height="21"/>
+                                <rect key="frame" x="134.5" y="515" width="106" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yp8-B1-Ntg">
-                                <rect key="frame" x="115" y="488" width="156" height="30"/>
+                                <rect key="frame" x="109.5" y="588" width="156" height="30"/>
                                 <state key="normal" title="Send cached locations"/>
                                 <connections>
                                     <action selector="onSendCachedLocations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ikj-F4-ebc"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="X5o-JN-3qY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="342"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTn-tc-VpU">
+                                <rect key="frame" x="125.5" y="376" width="125" height="30"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="6Cc-iC-sXa"/>
+                                </constraints>
+                                <state key="normal" title=" Start monitoring ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onStartMonitoringTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WQJ-MI-LcF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UHn-Fm-vni" firstAttribute="top" secondItem="rd6-VT-Z4p" secondAttribute="bottom" constant="8" symbolic="YES" id="1J8-s0-ZQ1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yp8-B1-Ntg" secondAttribute="bottom" constant="149" id="2N0-Vm-VNi"/>
-                            <constraint firstItem="YTn-tc-VpU" firstAttribute="top" secondItem="UHn-Fm-vni" secondAttribute="bottom" constant="70" id="5hc-Ly-zc3"/>
-                            <constraint firstItem="XRp-XN-hr1" firstAttribute="top" secondItem="YTn-tc-VpU" secondAttribute="bottom" constant="8" symbolic="YES" id="8Yg-Xr-Dhw"/>
-                            <constraint firstItem="yp8-B1-Ntg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="99" id="OTy-Is-Q1S"/>
-                            <constraint firstItem="XRp-XN-hr1" firstAttribute="centerX" secondItem="yp8-B1-Ntg" secondAttribute="centerX" id="X8b-T3-cYQ"/>
-                            <constraint firstItem="rd6-VT-Z4p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="136" id="aLI-49-6nt"/>
-                            <constraint firstItem="UHn-Fm-vni" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="49" id="bqJ-d4-nhb"/>
-                            <constraint firstItem="rd6-VT-Z4p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="89" id="e5i-0T-GDB"/>
-                            <constraint firstItem="YTn-tc-VpU" firstAttribute="centerX" secondItem="XRp-XN-hr1" secondAttribute="centerX" id="jdU-xH-KUx"/>
-                            <constraint firstItem="UHn-Fm-vni" firstAttribute="centerX" secondItem="XRp-XN-hr1" secondAttribute="centerX" id="oit-nP-gBl"/>
+                            <constraint firstItem="UHn-Fm-vni" firstAttribute="top" secondItem="rd6-VT-Z4p" secondAttribute="bottom" constant="14" id="6VY-i9-KFt"/>
+                            <constraint firstItem="UHn-Fm-vni" firstAttribute="centerX" secondItem="yp8-B1-Ntg" secondAttribute="centerX" id="C8K-oy-vrA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yp8-B1-Ntg" secondAttribute="bottom" constant="49" id="E8e-Kk-VKm"/>
+                            <constraint firstItem="XRp-XN-hr1" firstAttribute="top" secondItem="YTn-tc-VpU" secondAttribute="bottom" constant="14" id="K1M-rL-0eR"/>
+                            <constraint firstItem="X5o-JN-3qY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T9V-cS-TDx"/>
+                            <constraint firstItem="XRp-XN-hr1" firstAttribute="centerX" secondItem="rd6-VT-Z4p" secondAttribute="centerX" id="Ww0-s6-a8Q"/>
+                            <constraint firstItem="X5o-JN-3qY" firstAttribute="centerX" secondItem="YTn-tc-VpU" secondAttribute="centerX" id="a47-cn-wBi"/>
+                            <constraint firstItem="X5o-JN-3qY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bUb-Jk-mNa"/>
+                            <constraint firstItem="YTn-tc-VpU" firstAttribute="centerX" secondItem="XRp-XN-hr1" secondAttribute="centerX" id="baZ-BO-DZc"/>
+                            <constraint firstItem="rd6-VT-Z4p" firstAttribute="top" secondItem="XRp-XN-hr1" secondAttribute="bottom" constant="65" id="cFt-w1-vh1"/>
+                            <constraint firstItem="yp8-B1-Ntg" firstAttribute="top" secondItem="UHn-Fm-vni" secondAttribute="bottom" constant="8" symbolic="YES" id="cJD-wO-Lwl"/>
+                            <constraint firstItem="X5o-JN-3qY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kPh-PZ-dha"/>
+                            <constraint firstAttribute="trailing" secondItem="X5o-JN-3qY" secondAttribute="trailing" id="nne-we-UiW"/>
+                            <constraint firstItem="UHn-Fm-vni" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="ojy-br-2vg"/>
+                            <constraint firstItem="YTn-tc-VpU" firstAttribute="top" secondItem="X5o-JN-3qY" secondAttribute="bottom" constant="14" id="one-it-a1U"/>
+                            <constraint firstItem="rd6-VT-Z4p" firstAttribute="centerX" secondItem="UHn-Fm-vni" secondAttribute="centerX" id="xHZ-qZ-d87"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="X5o-JN-3qY" id="5IB-lh-Y94"/>
                         <outlet property="sharingCodeField" destination="UHn-Fm-vni" id="xTG-2h-s3v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
 </document>

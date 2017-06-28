@@ -13,6 +13,8 @@ class MonitoringManager: NSObject{
     fileprivate let collector = LocationCollectorAndSender()
     fileprivate let locationManager = CLLocationManager()
     
+    var didUpdateLoctionsClosure: (([CLLocation])->())?
+    
     var sharingCode: String?{
         get{
             return collector.sharingCode
@@ -61,5 +63,6 @@ extension MonitoringManager: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         collector.add(locations: locations)
+        didUpdateLoctionsClosure?(locations)
     }
 }
