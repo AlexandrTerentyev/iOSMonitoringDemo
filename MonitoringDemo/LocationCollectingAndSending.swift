@@ -1,5 +1,5 @@
 //
-//  LocationCollector.swift
+//  LocationCollectingAndSending.swift
 //  MonitoringDemo
 //
 //  Created by Aleksandr Terentev on 27.06.17.
@@ -24,7 +24,11 @@ class LocationCollectorAndSender: NSObject{
 
 extension LocationCollectorAndSender: SRWebSocketDelegate{
     func webSocket(_ webSocket: SRWebSocket!, didReceiveMessage message: Any!) {
-        
+        debugPrint("Socket didreceive message")
+    }
+    
+    func webSocket(_ webSocket: SRWebSocket!, didFailWithError error: Error!) {
+        debugPrint("Socket did fail with error:", error)
     }
     
     func sendCachedLocations() {
@@ -63,10 +67,12 @@ extension LocationCollectorAndSender: SRWebSocketDelegate{
             socket.send(data)
         }catch let error{
             debugPrint(error.localizedDescription)
+            socket.close()
             return
         }
         
         locations = []
+        socket.close()
     }
 }
 

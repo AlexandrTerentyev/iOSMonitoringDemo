@@ -8,4 +8,4 @@
 
 import Foundation
 
-let LocationsSocketURL = "0.0.0.0"
+let LocationsSocketURL = "ws://0.0.0.0:9090"
