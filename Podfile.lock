@@ -1,12 +1,12 @@
 PODS:
-  - SocketRocket (0.5.1)
+  - Starscream (2.0.4)
 
 DEPENDENCIES:
-  - SocketRocket
+  - Starscream
 
 SPEC CHECKSUMS:
-  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  Starscream: df5974ee928b157c8eda8af8de7c620276b7dfcc
 
-PODFILE CHECKSUM: 792724664fa382c895e8b241d96d1f06bff2db2d
+PODFILE CHECKSUM: a239fb4f9e8960df633084ae93bdcbf860678d83
 
 COCOAPODS: 1.2.1

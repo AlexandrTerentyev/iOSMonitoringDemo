@@ -8,9 +8,9 @@
 
 import Foundation
 import CoreLocation
-import SocketRocket
+import Starscream
 
-class LocationCollectorAndSender: NSObject{
+class LocationCollectorAndSender{
     fileprivate var locations = [CLLocation]()
     
     func add(locations: [CLLocation]){
@@ -22,29 +22,35 @@ class LocationCollectorAndSender: NSObject{
     var sharingCode: String?
 }
 
-extension LocationCollectorAndSender: SRWebSocketDelegate{
-    func webSocket(_ webSocket: SRWebSocket!, didReceiveMessage message: Any!) {
-        debugPrint("Socket didreceive message")
-    }
-    
-    func webSocket(_ webSocket: SRWebSocket!, didFailWithError error: Error!) {
-        debugPrint("Socket did fail with error:", error)
-    }
-    
-    func sendCachedLocations() {
-        let socket = SRWebSocket(url: URL(string: LocationsSocketURL))
-        socket?.open()
-    }
-
-    func webSocketDidOpen(_ webSocket: SRWebSocket!) {
+extension LocationCollectorAndSender: WebSocketDelegate{
+    func websocketDidConnect(socket: WebSocket) {
         DispatchQueue.main.async {
             self.sendCachedLocations()
         }
     }
     
-    func sendLocationsToSocket(socket: SRWebSocket){
+    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
+        print("Socket did close with error:", error)
+    }
+    
+    func websocketDidReceiveData(socket: WebSocket, data: Data) {
+        
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
+        
+    }
+    
+    func sendCachedLocations() {
+        let socket = WebSocket(url: URL(string: LocationsSocketURL)!)
+        socket.delegate = self
+        socket.connect()
+    }
+
+    
+    func sendLocationsToSocket(socket: WebSocket){
         guard let sharingCode = sharingCode else {
-            debugPrint("No sharing code")
+            print("No sharing code")
             return
         }
         
@@ -64,15 +70,15 @@ extension LocationCollectorAndSender: SRWebSocketDelegate{
         
         do{
             let data = try JSONSerialization.data(withJSONObject: json, options: .init(rawValue: 0))
-            socket.send(data)
+            socket.write(data: data)
         }catch let error{
-            debugPrint(error.localizedDescription)
-            socket.close()
+            print(error.localizedDescription)
+            socket.disconnect()
             return
         }
         
         locations = []
-        socket.close()
+        socket.disconnect()
     }
 }
 

@@ -141,6 +141,7 @@
 					4ECE2E5F1F02F7DA00FC1851 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = X483YMLE4M;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -359,11 +360,14 @@
 			baseConfigurationReference = EA0BDADC2EFC6B18A7497D88 /* Pods-MonitoringDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = X483YMLE4M;
 				INFOPLIST_FILE = MonitoringDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Free-Students.MonitoringDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -373,11 +377,13 @@
 			baseConfigurationReference = C9F1C0971AD1BF0F1F7841EC /* Pods-MonitoringDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = X483YMLE4M;
 				INFOPLIST_FILE = MonitoringDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Free-Students.MonitoringDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
