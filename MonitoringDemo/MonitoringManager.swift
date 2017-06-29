@@ -31,7 +31,7 @@ class MonitoringManager: NSObject{
     }
     
     private func setUpLocationManager(){
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = MonitoringAccuracy
         locationManager.delegate = self
     }
 }

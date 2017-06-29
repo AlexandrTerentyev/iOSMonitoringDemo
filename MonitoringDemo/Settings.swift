@@ -7,5 +7,8 @@
 //
 
 import Foundation
+import CoreLocation
 
-let LocationsSocketURL = "ws://0.0.0.0:9090"
+let LocationsSocketIP = "127.0.0.1"
+let LocationsSocketPort = 9090
+let MonitoringAccuracy = kCLLocationAccuracyBest

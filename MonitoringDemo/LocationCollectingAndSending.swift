@@ -8,11 +8,10 @@
 
 import Foundation
 import CoreLocation
-import Starscream
 
-class LocationCollectorAndSender{
+class LocationCollectorAndSender: NSObject{
     fileprivate var locations = [CLLocation]()
-    
+
     func add(locations: [CLLocation]){
         DispatchQueue.main.async {
             self.locations.append(contentsOf: locations)
@@ -22,33 +21,35 @@ class LocationCollectorAndSender{
     var sharingCode: String?
 }
 
-extension LocationCollectorAndSender: WebSocketDelegate{
-    func websocketDidConnect(socket: WebSocket) {
-        DispatchQueue.main.async {
-            self.sendCachedLocations()
+extension LocationCollectorAndSender: StreamDelegate{
+    
+    func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
+        switch eventCode {
+        case Stream.Event.openCompleted:
+            if let outStream = aStream as? OutputStream{
+                DispatchQueue.main.async {
+                    self.sendLocationsToStream(stream: outStream)
+                }
+            }
+            
+        default:
+            break
         }
-    }
-    
-    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
-        print("Socket did close with error:", error)
-    }
-    
-    func websocketDidReceiveData(socket: WebSocket, data: Data) {
-        
-    }
-    
-    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
-        
-    }
-    
-    func sendCachedLocations() {
-        let socket = WebSocket(url: URL(string: LocationsSocketURL)!)
-        socket.delegate = self
-        socket.connect()
     }
 
     
-    func sendLocationsToSocket(socket: WebSocket){
+    
+    func sendCachedLocations() {
+        var stream: Unmanaged<CFWriteStream>?
+        CFStreamCreatePairWithSocketToHost(nil, LocationsSocketIP as CFString, UInt32(LocationsSocketPort), nil, &stream)
+        let outStream: OutputStream? = stream?.takeRetainedValue()
+        outStream?.delegate = self
+        outStream?.schedule(in: RunLoop.current, forMode: .defaultRunLoopMode)
+        outStream?.open()
+    }
+
+    
+    func sendLocationsToStream(stream: OutputStream){
         guard let sharingCode = sharingCode else {
             print("No sharing code")
             return
@@ -70,15 +71,16 @@ extension LocationCollectorAndSender: WebSocketDelegate{
         
         do{
             let data = try JSONSerialization.data(withJSONObject: json, options: .init(rawValue: 0))
-            socket.write(data: data)
+            let res = data.withUnsafeBytes { stream.write($0, maxLength: data.count) }
+            print("write to stream with res:", res)
         }catch let error{
             print(error.localizedDescription)
-            socket.disconnect()
+            stream.close()
             return
         }
         
         locations = []
-        socket.disconnect()
+        stream.close()
     }
 }
 
