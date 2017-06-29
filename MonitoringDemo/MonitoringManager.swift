@@ -48,7 +48,7 @@ extension MonitoringManager{
 extension MonitoringManager: CLLocationManagerDelegate{
     func startUpdatingLocation() {
         
-        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
         // GPS
         locationManager.startUpdatingLocation()
         

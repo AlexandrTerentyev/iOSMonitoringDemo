@@ -11,6 +11,8 @@ import MapKit
 
 class ViewController: UIViewController {
 
+    var cameraDistance: CLLocationDistance = 1000
+    
     @IBOutlet weak var sharingCodeField: UITextField!
     
     
@@ -60,12 +62,12 @@ extension ViewController: MKMapViewDelegate{
         if currentLocationAnnotation == nil{
             currentLocationAnnotation = MKPointAnnotation()
             mapView.addAnnotation(currentLocationAnnotation!)
-            mapView.camera = MKMapCamera(lookingAtCenter: location.coordinate, fromDistance: 500, pitch: 0, heading: 0)
+            mapView.camera = MKMapCamera(lookingAtCenter: location.coordinate, fromDistance: cameraDistance, pitch: 0, heading: 0)
         }
         
         currentLocationAnnotation?.coordinate = location.coordinate
 
-        mapView.setCamera(MKMapCamera(lookingAtCenter: location.coordinate, fromDistance: 500, pitch: 0, heading: 0), animated: true)
+        mapView.setCamera(MKMapCamera(lookingAtCenter: location.coordinate, fromDistance: cameraDistance, pitch: 0, heading: 0), animated: true)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
